@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Sidebar from "./Sidebar";
+import Content from "./Content";
+
+import "./App.css";
+
+const Toggle = ({ toggle }) => {
+  return (
+    <div className="toggle-btn" onClick={toggle}>
+      <span />
+      <span />
+      <span />
+    </div>
+  );
+};
+
+const Brand = () => (
+  <div>
+    <h1 className="header-logo">Welcome</h1>
+  </div>
+);
 
 function App() {
+  const [activeSidebar, setActiveSidebar] = useState(false);
+  const toggle = () => setActiveSidebar((val) => !val);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: "flex" }}>
+      <Sidebar activeSidebar={activeSidebar} />
+      <div className={activeSidebar ? "content active" : "content"}>
+        <div className="brand">
+          <Toggle toggle={toggle} />
+          <Brand />
+        </div>
+        <Content />
+      </div>
     </div>
   );
 }
