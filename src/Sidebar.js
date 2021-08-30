@@ -5,13 +5,17 @@ const Sidebar = ({ activeSidebar }) => {
     <div>
       <div id="sidebar" className={activeSidebar ? "active" : ""}>
         <div className="logo">
-          <a href="/">My Super APP</a>
+          <a href="/">BANK JAGO</a>
         </div>
         <div className="nav">
-          <a href="/home">Home</a>
-          <a href="/about">About</a>
-          <a href="/project">Project</a>
-          <a href="/contact">Contact</a>
+          {/* Menu sidebar bisa disesuaikan sesuai tugas individunya */}
+          <a href="/home">Beranda</a>
+          <a href="/my-profile">Profil Saya</a>
+          <a href="/addnewclass">Buat Kelas Baru</a>
+          <a href="/my-class">Kelas Ajar Saya</a>
+          <a href="/upload">Post Artikel</a>
+          <a href="/my-articles">Artikel Saya</a>
+          <a href="/login">Sign Out</a>
         </div>
       </div>
     </div>
