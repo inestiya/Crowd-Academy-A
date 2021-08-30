@@ -15,8 +15,9 @@ const Toggle = ({ toggle }) => {
 };
 
 const Brand = () => (
+  // Sementara dummy text, di sini bisa render navigation dan profile
   <div>
-    <h1 className="header-logo">Welcome</h1>
+    <h1 className="header-logo">Test</h1>
   </div>
 );
 
