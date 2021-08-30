@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "bank-crowd-academy-a",
+=======
+  "name": "project",
+>>>>>>> 2964c99cb428315745947a1bfddd63ecbfbc0db3
   "version": "0.1.0",
   "private": true,
   "dependencies": {
