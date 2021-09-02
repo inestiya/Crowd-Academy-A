@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
+import Kelas from "./Kelas";
 
 import "./App.css";
 
@@ -33,6 +34,7 @@ function App() {
           <Brand />
         </div>
         <Content />
+        <Kelas/>
       </div>
     </div>
   );
