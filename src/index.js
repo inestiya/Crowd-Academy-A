@@ -1,13 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
+import "semantic-ui-css/semantic.min.css";
 import reportWebVitals from "./reportWebVitals";
 import RegisterForm from "./RegisterForm";
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
+    {/* tambahkan Register Form component jsx */}
     <RegisterForm />
   </React.StrictMode>,
   document.getElementById("root")
