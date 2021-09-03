@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { Button, Divider, Form, Header, Segment } from "semantic-ui-react";
+
+import Login from "./Login";
+import Register from "./RegisterForm";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
 import Kelas from "./Kelas";

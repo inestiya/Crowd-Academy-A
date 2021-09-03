@@ -11,7 +11,7 @@ import {
 
 import RegisterFormLogo from "./assets/register-logo-dummy.png";
 
-function RegisterForm() {
+function RegisterForm(props) {
   const registerOptions = [
     { key: "tutor", value: "tutor", text: "Tutor" },
     { key: "learner", value: "learner", text: "Learner" },
@@ -52,12 +52,14 @@ function RegisterForm() {
                   <input placeholder="Isi Ulang Password" type="Password" />
                 </Form.Field>
                 <Form.Field>
-                  <label>Login Sebagai</label>
+                  <label>Register Sebagai</label>
                   <Select
-                    placeholder="Login Sebagai"
+                    placeholder="Register Sebagai"
                     options={registerOptions}
                   />
                 </Form.Field>
+                
+                
                 <Button fluid primary>
                   Daftar
                 </Button>
@@ -66,6 +68,10 @@ function RegisterForm() {
               <Button secondary fluid>
                 Daftar dengan Email
               </Button>
+              <br></br>
+              <div>
+                Sudah punya akun? <a onClick={() => props.onLoginClick()}> Login </a>
+              </div>
             </Segment>
           </Grid.Column>
         </Grid.Row>
