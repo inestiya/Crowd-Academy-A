@@ -1,13 +1,20 @@
 import React, { useState } from "react";
-import { Button, Divider, Form, Header, Segment } from "semantic-ui-react";
+import { Button, Divider, Form, Header, Segment,Dropdown } from "semantic-ui-react";
 
+import RegisterForm from "./RegisterForm";
 import Login from "./Login";
-import Register from "./RegisterForm";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
 import Kelas from "./Kelas";
 
 import "./App.css";
+
+const [form, setForm] = useState("login");
+if (form === "login") {
+  return <Login onRegisterFormClick={() => setForm("register")} />;
+} else {
+  return <RegisterForm onLoginClick={() => setForm("login")} />;
+}
 
 const Toggle = ({ toggle }) => {
   return (
