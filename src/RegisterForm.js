@@ -8,6 +8,7 @@ import {
   Segment,
   Select,
 } from "semantic-ui-react";
+import "./App.js";
 
 import RegisterFormLogo from "./assets/register-logo-dummy.png";
 
@@ -69,7 +70,7 @@ function RegisterForm(props) {
                 Daftar dengan Email
               </Button>
               <br></br>
-              <div>
+              <div style={{ cursor: "pointer"}}>
                 Sudah punya akun? <a onClick={() => props.onLoginClick()}> Login </a>
               </div>
             </Segment>

@@ -1,4 +1,6 @@
 import React from "react";
+import "./App"
+import "./HomePage"
 
 const Sidebar = ({ activeSidebar }) => {
   return (
@@ -9,7 +11,7 @@ const Sidebar = ({ activeSidebar }) => {
         </div>
         <div className="nav">
           {/* Menu sidebar bisa disesuaikan sesuai tugas individunya */}
-          <a href="/home">Beranda</a>
+          <a href="/HomePage">Beranda</a>
           <a href="/my-profile">Profil Saya</a>
           <a href="/addnewclass">Buat Kelas Baru</a>
           <a href="/my-class">Kelas Ajar Saya</a>

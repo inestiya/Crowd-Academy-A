@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Segment, Table, TableHeaderCell, TableRow, } from 'semantic-ui-react'
+import { Container, Segment, Table } from 'semantic-ui-react'
 
 const Kelas = () => (
   <Container style={{ marginTop: '2em'}}>
