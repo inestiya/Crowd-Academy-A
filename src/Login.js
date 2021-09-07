@@ -1,7 +1,16 @@
-import { Button, Divider, Form, Header, Segment,Message, Dropdown } from "semantic-ui-react";
+import {
+  Button,
+  Divider,
+  Form,
+  Header,
+  Segment,
+  Message,
+  Dropdown,
+} from "semantic-ui-react";
 import { useState } from "react";
-import "./App.js";
+import { Link } from "react-router-dom";
 
+import "./App.js";
 
 function Login(props) {
   const friendOptions = [
@@ -29,36 +38,55 @@ function Login(props) {
     }
   };
 
-
   return (
-    <div style={{ display: "flex", height: "100vh", width: "100vw", justifyContent: "center", alignItems: "center" }}>
+    <div
+      style={{
+        display: "flex",
+        height: "100vh",
+        width: "100vw",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Segment size="medium" style={{ width: "30vw" }} raised>
         <Header>Login</Header>
 
         <Form>
           <Form.Field>
             <label>Email</label>
-            <input placeholder="Email address" type="email"
-            onChange={(event) => setEmail(event.target.value)}
+            <input
+              placeholder="Email address"
+              type="email"
+              onChange={(event) => setEmail(event.target.value)}
             />
-            </Form.Field>
+          </Form.Field>
           <Form.Field>
             <label>Password</label>
-            <input placeholder="Password" type="password"
-            onChange={(event) => setPassword(event.target.value)}
-            /> 
+            <input
+              placeholder="Password"
+              type="password"
+              onChange={(event) => setPassword(event.target.value)}
+            />
           </Form.Field>
           <Form.Field>
             <label>Login sebagai</label>
-            <Dropdown placeholder="-Login sebagai-" fluid selection options={friendOptions} />
+            <Dropdown
+              placeholder="-Login sebagai-"
+              fluid
+              selection
+              options={friendOptions}
+            />
           </Form.Field>
-          <div style={{ cursor: "pointer"}}>
-            Belum punya akun? <a onClick={() => props.onRegisterFormClick()}> Register </a>
+          <div style={{ cursor: "pointer" }}>
+            Belum punya akun?
+            <a onClick={() => props.onRegisterFormClick()}> Register </a>
           </div>
           <br></br>
-          <Button fluid primary onClick={onLogin}>
-            login
-          </Button>
+          <Link to="/homePage">
+            <Button fluid primary onClick={onLogin}>
+              login
+            </Button>
+          </Link>
         </Form>
 
         <Divider horizontal>ATAU</Divider>
