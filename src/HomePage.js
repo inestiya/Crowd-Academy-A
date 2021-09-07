@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
 import Kelas from "./Kelas";
-
+import Artikel from "./Artikel";
 
 const Toggle = ({ toggle }) => {
   return (
@@ -33,7 +33,8 @@ function HomePage() {
           <Brand />
         </div>
         <Content />
-        <Kelas/>
+        <Kelas />
+        <Artikel />
       </div>
     </div>
   );
