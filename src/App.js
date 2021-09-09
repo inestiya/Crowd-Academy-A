@@ -6,6 +6,8 @@ import PrivateRoute from "./PrivateRoute";
 import Auth from "./Auth";
 import Login from "./Login";
 import "./App.css";
+import Artikel from "./Artikel";
+import Kelas from "./Kelas";
 
 function App() {
 const [isLogin,onLogin] = useState(false);
@@ -19,6 +21,12 @@ const [isLogin,onLogin] = useState(false);
         <PrivateRoute path="/homePage" isLogin={isLogin}>
           <HomePage />
         </PrivateRoute>
+        <Route path="/artikel">
+            <Artikel />
+          </Route>
+          <Route path="/kelas">
+            <Kelas />
+          </Route>
         {/* <Route path="/profile">
           <Profile />
         </Route> */}
