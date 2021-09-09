@@ -56,7 +56,6 @@ function Login(props) {
             Belum punya akun? <a onClick={() => props.onRegisterFormClick()}> Register </a>
           </div>
           <br></br>
-    
           <Button fluid primary onClick={onLogin}>
             login
           </Button>

@@ -3,6 +3,7 @@ import RegisterForm from "./RegisterForm";
 import Login from "./Login"
 import HomePage from "./HomePage";
 
+
 function Auth() {
 const [page, setPage] = useState("login");
 if (page === "login") {
