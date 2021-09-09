@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom"
+import { BrowserRouter, Switch, Route,Redirect } from "react-router-dom"
 import "semantic-ui-css/semantic.min.css";
 import HomePage from "./HomePage";
 import PrivateRoute from "./PrivateRoute";
 import Auth from "./Auth";
-import Login from "./Login";
 import "./App.css";
 import Artikel from "./Artikel";
 import Kelas from "./Kelas";
@@ -16,8 +15,8 @@ const [isLogin,onLogin] = useState(false);
       <Switch>
         <Route path="/auth">
           <Auth />
-          {/* <Login onLogin={() => onLogin(true)} /> */}
         </Route>
+        {/* <PageLayout> */}
         <PrivateRoute path="/homePage" isLogin={isLogin}>
           <HomePage />
         </PrivateRoute>
@@ -27,9 +26,14 @@ const [isLogin,onLogin] = useState(false);
           <Route path="/kelas">
             <Kelas />
           </Route>
+          {/* </PageLayout> */}
+          <Route path="/">
+          <Redirect to="/auth" />
+        </Route>
         {/* <Route path="/profile">
           <Profile />
         </Route> */}
+      
       </Switch>
     </BrowserRouter>
   );
