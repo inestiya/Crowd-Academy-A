@@ -35,7 +35,6 @@ function HomePage() {
         </div>
         <Content />
         <Artikel />
-        <Kelas/>
       </div>
     </div>
   );
