@@ -4,6 +4,7 @@ import {
   Form,
   Grid,
   Header,
+  Icon,
   Image,
   Segment,
   Select,
@@ -59,19 +60,19 @@ function RegisterForm(props) {
                     options={registerOptions}
                   />
                 </Form.Field>
-                
-                
                 <Button fluid primary>
                   Daftar
                 </Button>
               </Form>
               <Divider horizontal>atau</Divider>
-              <Button secondary fluid>
+              <Button fluid color="google plus">
+                <Icon name="google plus" />
                 Daftar dengan Email
               </Button>
               <br></br>
-              <div style={{ cursor: "pointer"}}>
-                Sudah punya akun? <a onClick={() => props.onLoginClick()}> Login </a>
+              <div style={{ cursor: "pointer" }}>
+                Sudah punya akun?{" "}
+                <a onClick={() => props.onLoginClick()}> Login </a>
               </div>
             </Segment>
           </Grid.Column>
