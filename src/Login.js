@@ -1,4 +1,4 @@
-import {  Button,  Divider,  Form,  Header,  Segment,  Message, Dropdown,  Icon,  Image,} from "semantic-ui-react";
+import {  Button,  Divider,  Form,  Header,  Segment,  Message, Dropdown,  Icon,  Image,Grid} from "semantic-ui-react";
 import { useState } from "react";
 import "./App.js";
 import LoginFormLogo from "./assets/logo.png";
@@ -38,9 +38,16 @@ function Login(props) {
         justifyContent: "center",
         alignItems: "center",
       }}
-    >
+    > 
+    <Grid style={{ marginLeft: "15vw" }}>
+        <Grid.Row>
+          <Grid.Column>
+            <Image src={LoginFormLogo} size="small" />
+          </Grid.Column>
+        </Grid.Row>
+      <Grid.Row>
+          <Grid.Column>
       <Segment size="medium" style={{ width: "30vw" }} raised>
-        <Image src={LoginFormLogo} size="small"  />
         <Header style={{ display: "flex", justifyContent: "center" }}>
           Login
         </Header>
@@ -97,6 +104,9 @@ function Login(props) {
           <p>Wrong combination of email and password!</p>
         </Message>
       ) : null}
+      </Grid.Column>
+      </Grid.Row>
+      </Grid>
     </div>
   );
 }
