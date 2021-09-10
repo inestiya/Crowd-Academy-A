@@ -18,7 +18,7 @@ const Toggle = ({ toggle }) => {
 const Brand = () => (
   // Sementara dummy text, di sini bisa render navigation dan profile
   <div>
-    <h1 className="header-logo">Crowd Academy</h1>
+    <h1 className="header-logo">Crowd Banking Academy</h1>
   </div>
 );
 

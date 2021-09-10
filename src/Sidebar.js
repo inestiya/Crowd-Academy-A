@@ -1,17 +1,19 @@
 import React from "react";
 import "./App"
 import "./HomePage"
+import { Image } from "semantic-ui-react";
 
+import CALogo from "./assets/logo-CA-background2.png";
 const Sidebar = ({ activeSidebar }) => {
   return (
     <div>
       <div id="sidebar" className={activeSidebar ? "active" : ""}>
         <div className="logo">
-          <a href="/">BANK JAGO</a>
+          <a href="/"><Image src={CALogo} size="small" /></a>
         </div>
         <div className="nav">
           {/* Menu sidebar bisa disesuaikan sesuai tugas individunya */}
-          <a href="/HomePage">Beranda</a>
+          <a href="/homePage">Beranda</a>
           <a href="/my-profile">Profil Saya</a>
           <a href="/addnewclass">Buat Kelas Baru</a>
           <a href="/my-class">Kelas Ajar Saya</a>
