@@ -1,7 +1,7 @@
-import { Button, Divider, Form, Header, Segment,Message, Dropdown } from "semantic-ui-react";
+import {  Button,  Divider,  Form,  Header,  Segment,  Message, Dropdown,  Icon,  Image,} from "semantic-ui-react";
 import { useState } from "react";
 import "./App.js";
-
+import LoginFormLogo from "./assets/logo.png";
 
 function Login(props) {
   const friendOptions = [
@@ -29,31 +29,52 @@ function Login(props) {
     }
   };
 
-
   return (
-    <div style={{ display: "flex", height: "100vh", width: "100vw", justifyContent: "center", alignItems: "center" }}>
+    <div
+      style={{
+        display: "flex",
+        height: "100vh",
+        width: "100vw",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <Segment size="medium" style={{ width: "30vw" }} raised>
-        <Header>Login</Header>
+        <Image src={LoginFormLogo} size="small"  />
+        <Header style={{ display: "flex", justifyContent: "center" }}>
+          Login
+        </Header>
 
         <Form>
           <Form.Field>
             <label>Email</label>
-            <input placeholder="Email address" type="email"
-            onChange={(event) => setEmail(event.target.value)}
+            <input
+              placeholder="Email address"
+              type="email"
+              onChange={(event) => setEmail(event.target.value)}
             />
-            </Form.Field>
+          </Form.Field>
           <Form.Field>
             <label>Password</label>
-            <input placeholder="Password" type="password"
-            onChange={(event) => setPassword(event.target.value)}
-            /> 
+            <input
+              placeholder="Password"
+              type="password"
+              onChange={(event) => setPassword(event.target.value)}
+            />
           </Form.Field>
           <Form.Field>
             <label>Login sebagai</label>
-            <Dropdown placeholder="-Login sebagai-" fluid selection options={friendOptions} />
+            <Dropdown
+              placeholder="-Login sebagai-"
+              fluid
+              selection
+              options={friendOptions}
+              onChange={(_, data) => console.log(data)}
+            />
           </Form.Field>
-          <div style={{ cursor: "pointer"}}>
-            Belum punya akun? <a onClick={() => props.onRegisterFormClick()}> Register </a>
+          <div style={{ cursor: "pointer" }}>
+            Belum punya akun?{" "}
+            <a onClick={() => props.onRegisterFormClick()}> Register </a>
           </div>
           <br></br>
           <Button fluid primary onClick={onLogin}>
@@ -62,16 +83,12 @@ function Login(props) {
         </Form>
 
         <Divider horizontal>ATAU</Divider>
-        <Button secondary fluid>
-          Masuk menggunakan google
+        <Button fluid color="google">
+          <Icon name="google" /> Google
         </Button>
         <br></br>
-        <Button secondary fluid>
-          Masuk menggunakan facebook
-        </Button>
-        <br></br>
-        <Button secondary fluid>
-          Masuk menggunakan twitter
+        <Button fluid color="facebook">
+          <Icon name="facebook" /> Facebook
         </Button>
       </Segment>
       {isError ? (
