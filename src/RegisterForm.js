@@ -1,17 +1,17 @@
 import {
   Button,
   Divider,
+  Dropdown,
   Form,
   Grid,
   Header,
   Icon,
   Image,
   Segment,
-  Select,
 } from "semantic-ui-react";
 import "./App.js";
 
-import RegisterFormLogo from "./assets/register-logo-dummy.png";
+import RegisterFormLogo from "./assets/logo.png";
 
 function RegisterForm(props) {
   const registerOptions = [
@@ -54,10 +54,13 @@ function RegisterForm(props) {
                   <input placeholder="Isi Ulang Password" type="Password" />
                 </Form.Field>
                 <Form.Field>
-                  <label>Register Sebagai</label>
-                  <Select
-                    placeholder="Register Sebagai"
+                  <label>Register sebagai</label>
+                  <Dropdown
+                    placeholder="-Register sebagai-"
+                    fluid
+                    selection
                     options={registerOptions}
+                    onChange={(_, data) => console.log(data.value)}
                   />
                 </Form.Field>
                 <Button fluid primary>
