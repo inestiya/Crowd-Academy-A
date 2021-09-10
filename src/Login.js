@@ -1,4 +1,15 @@
-import {  Button,  Divider,  Form,  Header,  Segment,  Message, Dropdown,  Icon,  Image,Grid} from "semantic-ui-react";
+import {
+  Button,
+  Divider,
+  Form,
+  Header,
+  Segment,
+  Message,
+  Dropdown,
+  Icon,
+  Image,
+  Grid,
+} from "semantic-ui-react";
 import { useState } from "react";
 import "./App.js";
 import LoginFormLogo from "./assets/logo.png";
@@ -38,74 +49,74 @@ function Login(props) {
         justifyContent: "center",
         alignItems: "center",
       }}
-    > 
-    <Grid style={{ marginLeft: "15vw" }}>
+    >
+      <Grid style={{ marginLeft: "15vw" }}>
         <Grid.Row>
           <Grid.Column>
-            <Image src={LoginFormLogo} size="small" />
+            <Image src={LoginFormLogo} size="medium" />
           </Grid.Column>
         </Grid.Row>
-      <Grid.Row>
+        <Grid.Row>
           <Grid.Column>
-      <Segment size="medium" style={{ width: "30vw" }} raised>
-        <Header style={{ display: "flex", justifyContent: "center" }}>
-          Login
-        </Header>
+            <Segment size="medium" style={{ width: "30vw" }} raised>
+              <Header style={{ display: "flex", justifyContent: "center" }}>
+                Login
+              </Header>
 
-        <Form>
-          <Form.Field>
-            <label>Email</label>
-            <input
-              placeholder="Email address"
-              type="email"
-              onChange={(event) => setEmail(event.target.value)}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label>Password</label>
-            <input
-              placeholder="Password"
-              type="password"
-              onChange={(event) => setPassword(event.target.value)}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label>Login sebagai</label>
-            <Dropdown
-              placeholder="-Login sebagai-"
-              fluid
-              selection
-              options={friendOptions}
-              onChange={(_, data) => console.log(data)}
-            />
-          </Form.Field>
-          <div style={{ cursor: "pointer" }}>
-            Belum punya akun?{" "}
-            <a onClick={() => props.onRegisterFormClick()}> Register </a>
-          </div>
-          <br></br>
-          <Button fluid primary onClick={onLogin}>
-            login
-          </Button>
-        </Form>
+              <Form>
+                <Form.Field>
+                  <label>Email</label>
+                  <input
+                    placeholder="Email address"
+                    type="email"
+                    onChange={(event) => setEmail(event.target.value)}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Password</label>
+                  <input
+                    placeholder="Password"
+                    type="password"
+                    onChange={(event) => setPassword(event.target.value)}
+                  />
+                </Form.Field>
+                <Form.Field>
+                  <label>Login sebagai</label>
+                  <Dropdown
+                    placeholder="-Login sebagai-"
+                    fluid
+                    selection
+                    options={friendOptions}
+                    onChange={(_, data) => console.log(data)}
+                  />
+                </Form.Field>
+                <div style={{ cursor: "pointer" }}>
+                  Belum punya akun?{" "}
+                  <a onClick={() => props.onRegisterFormClick()}> Register </a>
+                </div>
+                <br></br>
+                <Button fluid primary onClick={onLogin}>
+                  login
+                </Button>
+              </Form>
 
-        <Divider horizontal>ATAU</Divider>
-        <Button fluid color="google">
-          <Icon name="google" /> Google
-        </Button>
-        <br></br>
-        <Button fluid color="facebook">
-          <Icon name="facebook" /> Facebook
-        </Button>
-      </Segment>
-      {isError ? (
-        <Message negative>
-          <Message.Header>Wrong credentials</Message.Header>
-          <p>Wrong combination of email and password!</p>
-        </Message>
-      ) : null}
-      </Grid.Column>
-      </Grid.Row>
+              <Divider horizontal>ATAU</Divider>
+              <Button fluid color="google">
+                <Icon name="google" /> Google
+              </Button>
+              <br></br>
+              <Button fluid color="facebook">
+                <Icon name="facebook" /> Facebook
+              </Button>
+            </Segment>
+            {isError ? (
+              <Message negative>
+                <Message.Header>Wrong credentials</Message.Header>
+                <p>Wrong combination of email and password!</p>
+              </Message>
+            ) : null}
+          </Grid.Column>
+        </Grid.Row>
       </Grid>
     </div>
   );
