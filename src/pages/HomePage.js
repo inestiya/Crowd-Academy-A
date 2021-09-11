@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Sidebar from "./Sidebar";
-import Content from "./Content";
-import Kelas from "./Kelas";
-import Artikel from"./Artikel"
+import Sidebar from "../component/Sidebar";
+import Content from "../component/Content";
+import Artikel from"../page/Artikel"
 
 
 const Toggle = ({ toggle }) => {
@@ -18,7 +17,7 @@ const Toggle = ({ toggle }) => {
 const Brand = () => (
   // Sementara dummy text, di sini bisa render navigation dan profile
   <div>
-    <h1 className="header-logo">Crowd Banking Academy</h1>
+    <h1 className="header-logo">Banking Crowd Academy</h1>
   </div>
 );
 

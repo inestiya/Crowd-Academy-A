@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import RegisterForm from "./RegisterForm";
-import Login from "./Login"
-import HomePage from "./HomePage";
+import RegisterForm from "./pages/RegisterForm";
+import Login from "./pages/Login"
+import HomePage from "./pages/HomePage";
 
 
 function Auth() {
