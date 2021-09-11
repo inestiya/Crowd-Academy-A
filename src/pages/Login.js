@@ -42,7 +42,7 @@ function Login(props) {
     <Grid style={{ marginLeft: "15vw" }}>
         <Grid.Row>
           <Grid.Column>
-            <Image src={LoginFormLogo} size="small" />
+            <Image src={LoginFormLogo} size="medium" />
           </Grid.Column>
         </Grid.Row>
       <Grid.Row>
