@@ -1,17 +1,16 @@
 import {
   Button,
   Divider,
-  Dropdown,
   Form,
   Grid,
   Header,
-  Icon,
   Image,
   Segment,
+  Select,Icon
 } from "semantic-ui-react";
-import "./App.js";
+import "../App.js";
 
-import RegisterFormLogo from "./assets/logo.png";
+import RegisterFormLogo from "../assets/logo.png";
 
 function RegisterForm(props) {
   const registerOptions = [
@@ -54,28 +53,26 @@ function RegisterForm(props) {
                   <input placeholder="Isi Ulang Password" type="Password" />
                 </Form.Field>
                 <Form.Field>
-                  <label>Register sebagai</label>
-                  <Dropdown
-                    placeholder="-Register sebagai-"
-                    fluid
-                    selection
+                  <label>Register Sebagai</label>
+                  <Select
+                    placeholder="Register Sebagai"
                     options={registerOptions}
-                    onChange={(_, data) => console.log(data.value)}
                   />
                 </Form.Field>
+                
+                
                 <Button fluid primary>
                   Daftar
                 </Button>
               </Form>
               <Divider horizontal>atau</Divider>
               <Button fluid color="google plus">
-                <Icon name="google plus" />
+              <Icon name="google plus" />
                 Daftar dengan Email
               </Button>
               <br></br>
-              <div style={{ cursor: "pointer" }}>
-                Sudah punya akun?{" "}
-                <a onClick={() => props.onLoginClick()}> Login </a>
+              <div style={{ cursor: "pointer"}}>
+                Sudah punya akun? <a onClick={() => props.onLoginClick()}> Login </a>
               </div>
             </Segment>
           </Grid.Column>
