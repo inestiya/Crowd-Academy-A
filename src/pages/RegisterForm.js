@@ -31,7 +31,7 @@ function RegisterForm(props) {
       <Grid style={{ marginLeft: "15vw" }}>
         <Grid.Row>
           <Grid.Column>
-            <Image src={RegisterFormLogo} size="small" />
+            <Image src={RegisterFormLogo} size="medium" />
           </Grid.Column>
         </Grid.Row>
 
