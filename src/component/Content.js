@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import { Container, Tab, Table, Segment } from "semantic-ui-react";
+import styled from "styled-components";
+
+const Read = styled.a`
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 class Content extends Component {
   state = { activeIndex: 1 };
@@ -53,7 +62,7 @@ class Content extends Component {
                       <Table.Cell>:</Table.Cell>
                       <Table.Cell style={{ textAlign: "left" }}>
                         Go Lang merupakan bahasa pemrogr ...{" "}
-                        <text>Read more</text>
+                        <Read href="_blank">Read more</Read>
                       </Table.Cell>
                     </Table.Row>
                   </Table.Body>
