@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import { Container, Tab, Table, Segment } from "semantic-ui-react";
+import { Container, Tab } from "semantic-ui-react";
 import styled from "styled-components";
 import Artikel from "../page/Artikel";
 import Kelas from "../page/Kelas"
