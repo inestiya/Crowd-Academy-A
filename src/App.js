@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter, Switch, Route,Redirect } from "react-router-dom"
 import "semantic-ui-css/semantic.min.css";
 import HomePage from "./pages/HomePage";
-import PrivateRoute from "./component/PrivateRoute";
+// import PrivateRoute from "./component/PrivateRoute";
 import Auth from "./Auth";
 import "./App.css";
 import Artikel from "./page/Artikel";
@@ -17,9 +17,9 @@ const [isLogin,onLogin] = useState(false);
           <Auth />
         </Route>
         {/* <PageLayout> */}
-        <PrivateRoute path="/HomePage" isLogin={isLogin}>
+        <Route path="/homepage" isLogin={isLogin}>
           <HomePage />
-        </PrivateRoute>
+        </Route>
         <Route path="/artikel">
             <Artikel />
           </Route>
