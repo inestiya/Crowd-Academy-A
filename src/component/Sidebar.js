@@ -3,7 +3,7 @@ import "../App";
 import "../pages/HomePage";
 import { Image } from "semantic-ui-react";
 
-import CALogo from "../assets/logo-CA-background2.png";
+import CALogo from "../assets/logo-CA-background.png";
 const Sidebar = ({ activeSidebar }) => {
   return (
     <div>
@@ -15,7 +15,7 @@ const Sidebar = ({ activeSidebar }) => {
         </div>
         <div className="nav">
           {/* Menu sidebar bisa disesuaikan sesuai tugas individunya */}
-          <a href="/HomePage">Beranda</a>
+          <a href="/homepage">Beranda</a>
           <a href="/my-profile">Profil Saya</a>
           <a href="/addnewclass">Buat Kelas Baru</a>
           <a href="/my-class">Kelas Ajar Saya</a>
