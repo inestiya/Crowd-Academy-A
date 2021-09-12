@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from "../component/Sidebar";
 import Content from "../component/Content";
-import Artikel from"../page/Artikel"
-
 
 const Toggle = ({ toggle }) => {
   return (
@@ -32,8 +30,15 @@ function HomePage() {
           <Toggle toggle={toggle} />
           <Brand />
         </div>
+        {" <hr> <hr> <br> "}
+        <hr></hr>
+        <hr></hr>
+        <hr></hr>
+        <hr></hr>
+        <hr></hr>
+        <hr></hr>
+        <hr></hr>
         <Content />
-        <Artikel />
       </div>
     </div>
   );

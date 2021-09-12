@@ -6,11 +6,12 @@ import {
   Header,
   Image,
   Segment,
-  Select,Icon
+  Select,
+  Icon,
 } from "semantic-ui-react";
 import "../App.js";
 
-import RegisterFormLogo from "../assets/logo.png";
+import RegisterFormLogo from "../assets/logo-CA-background2.png";
 
 function RegisterForm(props) {
   const registerOptions = [
@@ -38,7 +39,9 @@ function RegisterForm(props) {
         <Grid.Row>
           <Grid.Column>
             <Segment size="medium" style={{ width: "30vw" }} raised>
-              <Header>Register</Header>
+              <Header style={{ display: "flex", justifyContent: "center" }}>
+                Register
+              </Header>
               <Form>
                 <Form.Field>
                   <label>Username (Email)</label>
@@ -59,20 +62,20 @@ function RegisterForm(props) {
                     options={registerOptions}
                   />
                 </Form.Field>
-                
-                
+
                 <Button fluid primary>
                   Daftar
                 </Button>
               </Form>
               <Divider horizontal>atau</Divider>
               <Button fluid color="google plus">
-              <Icon name="google plus" />
-                Daftar dengan Email
+                <Icon name="google plus" />
+                Daftar dengan Gmail
               </Button>
               <br></br>
-              <div style={{ cursor: "pointer"}}>
-                Sudah punya akun? <a onClick={() => props.onLoginClick()}> Login </a>
+              <div style={{ cursor: "pointer" }}>
+                Sudah punya akun?{" "}
+                <a onClick={() => props.onLoginClick()}> Login </a>
               </div>
             </Segment>
           </Grid.Column>
