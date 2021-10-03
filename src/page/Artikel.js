@@ -90,7 +90,7 @@ useEffect(() => {
             <span>:</span>
           </Grid.Column>
           <Grid.Column width={3}>
-            <span>{artikel.penulis}</span>
+            <span>"Penulis"</span>
           </Grid.Column>
         </StyledGridRow>
 
