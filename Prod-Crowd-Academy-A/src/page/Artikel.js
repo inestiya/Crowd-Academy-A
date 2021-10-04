@@ -1,93 +1,124 @@
-import React from "react";
+import React, {useEffect, useState } from "react";
+import { Container, Grid, Message } from "semantic-ui-react";
 import styled from "styled-components";
+import { instance } from "../api/instance";
 
-/* Styled Component semantic HTML */
-const Wrapper = styled.main`
-  width: 100%;
-  color: #000000;
-`;
+/* Function with hook*/
 
-const Card = styled.section`
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width: 90%;
-  padding: 10rem 0rem;
-  margin: 2rem 1rem;
-`;
+function Artikel() {
+const [response, setResponse] = useState([]);
+useEffect(() => {
+  instance
+    .get("/list_artikel?id_tutor=1")
+    .then((response) => {
+        setResponse(response.data.data)
+    })
+    .catch(() => {
+      <Message negative>Failed to fetch from server!</Message>
+    });
+}, []);
 
-const Text = styled.p`
-  margin: 1.2rem;
-`;
+  
+    // const currentTransaction = transaction?.data[0];
 
-const Colon = styled.span`
-  margin-right: 2rem;
-  margin-left: ${({ position }) => {
-    if (position === "1") return "15rem";
-    else if (position === "2") return "16.4rem";
-    else if (position === "3") return "13rem";
-    else if (position === "4") return "13.6rem";
-    else return "14.7rem;";
-  }};
-`;
+  const StyledGrid = styled(Grid)`
+    border: 1px solid lightgray;
+    border-radius: 0.2rem;
+    box-shadow: 0.1rem 0.1rem lightgray;
+    margin: 2rem 0 !important;
+  `;
 
-const Read = styled.a`
-  margin-left: 0.5rem;
-  font-size: 1.2rem;
-  &:hover {
-    text-decoration: underline;
-  }
-`;
+  const StyledGridRow = styled(Grid.Row)`
+    padding: 1rem !important;
+  `;
 
-const TextWrapper = styled.article`
-  margin-top: -8rem;
-`;
+  const Read = styled.a`
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+    &:hover {
+      text-decoration: underline;
+    }
+  `;
 
-class Artikel extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      kategori: "IT & Data",
-      judul: "Introduction to Go Lang",
-      postingDate: "17 Juli 2021",
-      ditulisOleh: "Sandy",
-      isiArtikel: "Go Lang merupakan bahasa pemrogr... ",
-    };
-  }
+  /*combine UI Framework with styled components*/
+  return (
+    <div>
+    {response.map((artikel) => (
+   <Container>
+      <StyledGrid>
+        <StyledGridRow>
+          <Grid.Column width={6}>
+            <span>Kategori</span>
+          </Grid.Column>
+          <Grid.Column width={1}>
+            <span>:</span>
+          </Grid.Column>
+          <Grid.Column width={3}>
+            <span>{artikel.kategori_artikel}</span>
+          </Grid.Column>
+        </StyledGridRow>
 
-  render() {
-    return (
-      <Wrapper>
-        <Card>
-          <TextWrapper>
-            <Text>
-              Kategori<Colon position="1"> : </Colon> {this.state.kategori}
-            </Text>
-            <Text>
-              Judul<Colon position="2"> : </Colon> {this.state.judul}
-            </Text>
-            <Text>
-              Posting Date <Colon position="3"> : </Colon>
-              {this.state.postingDate}
-            </Text>
-            <Text>
-              Ditulis Oleh <Colon position="4"> : </Colon>
-              {this.state.ditulisOleh}
-            </Text>
-            <Text>
-              Isi Artikel<Colon position="5"> : </Colon>
-              {this.state.isiArtikel}
-              <Read href="_blank">read</Read>
-            </Text>
-          </TextWrapper>
-        </Card>
+        <StyledGridRow>
+          <Grid.Column width={6}>
+            <span>Judul</span>
+          </Grid.Column>
+          <Grid.Column width={1}>
+            <span>:</span>
+          </Grid.Column>
+          <Grid.Column width={3}>
+            <span>{artikel.judul}</span>
+          </Grid.Column>
+        </StyledGridRow>
 
-        <Card>
-          <TextWrapper>
-            <Text>Isi Artikel 2 dan Seterusnya</Text>
-          </TextWrapper>
-        </Card>
-      </Wrapper>
-    );
-  }
-}
+        <StyledGridRow>
+          <Grid.Column width={6}>
+            <span>Posting Date</span>
+          </Grid.Column>
+          <Grid.Column width={1}>
+            <span>:</span>
+          </Grid.Column>
+          <Grid.Column width={3}>
+            <span>{artikel.tanggal_posting}</span>
+          </Grid.Column>
+        </StyledGridRow>
+
+        <StyledGridRow>
+          <Grid.Column width={6}>
+            <span>Ditulis Oleh</span>
+          </Grid.Column>
+          <Grid.Column width={1}>
+            <span>:</span>
+          </Grid.Column>
+          <Grid.Column width={3}>
+            <span>"Penulis"</span>
+          </Grid.Column>
+        </StyledGridRow>
+
+        <StyledGridRow>
+          <Grid.Column width={6}>
+            <span>Isi Artikel</span>
+          </Grid.Column>
+          <Grid.Column width={1}>
+            <span>:</span>
+          </Grid.Column>
+          <Grid.Column width={5}>
+            <span>{artikel.isi_artikel}</span>
+            <Read href="_blank">read</Read>
+          </Grid.Column>
+        </StyledGridRow>
+      </StyledGrid>
+
+      <StyledGrid>
+        <StyledGridRow>
+          <Grid.Column>
+            <span>Isi Artikel 2 dan Seterusnya</span>
+          </Grid.Column>
+        </StyledGridRow>
+      </StyledGrid>
+    </Container>
+    ))}
+    </div>
+  );
+};
 
 export default Artikel;
