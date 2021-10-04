@@ -1,6 +1,6 @@
 import { Message } from "semantic-ui-react";
 
-function Success() {
+function SuccessForm() {
   return (
     <Message
       success
@@ -10,4 +10,4 @@ function Success() {
   );
 }
 
-export default Success;
+export default SuccessForm;
