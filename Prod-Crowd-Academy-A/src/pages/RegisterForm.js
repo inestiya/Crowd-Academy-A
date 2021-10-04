@@ -12,6 +12,8 @@ import {
   Icon,
   Message,
 } from "semantic-ui-react";
+import { instance } from "../api/instance.js";
+import Success from "../component/Success.js";
 import "../App.js";
 
 import RegisterFormLogo from "../assets/logo-CA-background2.png";
@@ -22,23 +24,29 @@ function RegisterForm(props) {
     { key: "tutor", value: "2", text: "Tutor" },
   ];
 
-  const onRegister = () => {
-    if (
-      email === "" ||
-      password === "" ||
-      validationpassword === "" ||
-      registerAs === ""
-    ) {
-      setIsError(true);
-    } else {
-      props.onLogin();
-    }
-  };
   const [iserror, setIsError] = useState(false);
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [validationpassword, setValidationPassword] = useState("");
   const [registerAs, setRegisterAs] = useState("");
+
+  // const loginProps = (props) => {
+  //   props.onLogin();
+  // };
+
+  const onRegister = () => {
+    instance
+      .post("/register", {
+        username: username,
+        password: password,
+        register_as: registerAs,
+      })
+      .then(() => {
+        return <Success />;
+      })
+      // .then(loginProps)
+      .catch(setIsError(true));
+  };
 
   return (
     <div
@@ -69,7 +77,7 @@ function RegisterForm(props) {
                   <input
                     placeholder="Isi username atau email"
                     type="email"
-                    onChange={(event) => setEmail(event.target.value)}
+                    onChange={(event) => setUsername(event.target.value)}
                   />
                 </Form.Field>
                 <Form.Field>
@@ -115,11 +123,13 @@ function RegisterForm(props) {
               </div>
             </Segment>
             {iserror ? (
-              <Message>
+              <Message negative>
                 <Message.Header>Upsss...</Message.Header>
                 <p>Tidak bisa melakukan registrasi. Cek kembali isian Anda.</p>
               </Message>
-            ) : null}
+            ) : (
+              <Success />
+            )}
           </Grid.Column>
         </Grid.Row>
       </Grid>
