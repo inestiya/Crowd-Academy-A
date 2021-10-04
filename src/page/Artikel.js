@@ -14,7 +14,7 @@ useEffect(() => {
         setResponse(response.data.data)
     })
     .catch(() => {
-      Message("Failed to fetch from server!");
+      <Message negative>Failed to fetch from server!</Message>
     });
 }, []);
 
