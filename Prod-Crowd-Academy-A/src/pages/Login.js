@@ -34,10 +34,10 @@ function Login(props) {
   const [loginAs, setLoginAs] = useState("");
 
   const onLogin = () => {
-    if (email === "timA@mail.com" && password === "password") {
-      props.onLogin();
-    } else {
+    if (email === "" && password === "" && loginAs === "") {
       setError(true);
+    } else {
+      props.onLogin();
     }
   };
 
@@ -113,8 +113,8 @@ function Login(props) {
             </Segment>
             {isError ? (
               <Message negative>
-                <Message.Header>Wrong credentials</Message.Header>
-                <p>Wrong combination of email and password!</p>
+                <Message.Header>Upsss...</Message.Header>
+                <p>Tidak bisa login. Cek kembali isian Anda.</p>
               </Message>
             ) : null}
           </Grid.Column>

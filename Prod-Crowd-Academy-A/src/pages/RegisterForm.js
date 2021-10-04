@@ -10,6 +10,7 @@ import {
   Segment,
   Select,
   Icon,
+  Message,
 } from "semantic-ui-react";
 import "../App.js";
 
@@ -21,9 +22,23 @@ function RegisterForm(props) {
     { key: "tutor", value: "2", text: "Tutor" },
   ];
 
+  const onRegister = () => {
+    if (
+      email === "" &&
+      password === "" &&
+      validationpassword === "" &&
+      registerAs === ""
+    ) {
+      setIsError(true);
+    } else {
+      props.onLogin();
+    }
+  };
+  const [iserror, setIsError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [validationpassword, setValidationPassword] = useState("");
+  const [registerAs, setRegisterAs] = useState("");
 
   return (
     <div
@@ -80,11 +95,11 @@ function RegisterForm(props) {
                   <Select
                     placeholder="Register Sebagai"
                     options={registerOptions}
-                    onChange={(_, { value }) => value}
+                    onChange={(_, { value }) => setRegisterAs(value)}
                   />
                 </Form.Field>
 
-                <Button fluid primary>
+                <Button fluid primary onClick={onRegister}>
                   Daftar
                 </Button>
               </Form>
@@ -99,6 +114,12 @@ function RegisterForm(props) {
                 <a onClick={() => props.onLoginClick()}> Login </a>
               </div>
             </Segment>
+            {iserror ? (
+              <Message>
+                <Message.Header>Upsss...</Message.Header>
+                <p>Tidak bisa melakukan registrasi. Cek kembali isian Anda.</p>
+              </Message>
+            ) : null}
           </Grid.Column>
         </Grid.Row>
       </Grid>
