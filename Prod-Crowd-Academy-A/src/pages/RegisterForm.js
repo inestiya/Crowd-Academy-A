@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import {
   Button,
   Divider,
@@ -13,7 +12,7 @@ import {
   Message,
 } from "semantic-ui-react";
 import { instance } from "../api/instance.js";
-import Success from "../component/Success.js";
+import SuccessForm from "../component/Success.js";
 import "../App.js";
 
 import RegisterFormLogo from "../assets/logo-CA-background2.png";
@@ -25,6 +24,7 @@ function RegisterForm(props) {
   ];
 
   const [iserror, setIsError] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [validationpassword, setValidationPassword] = useState("");
@@ -42,10 +42,11 @@ function RegisterForm(props) {
         register_as: registerAs,
       })
       .then(() => {
-        return <Success />;
+        setIsSuccess(true);
       })
-      // .then(loginProps)
-      .catch(setIsError(true));
+      .catch(() => {
+        setIsError(true);
+      });
   };
 
   return (
@@ -127,9 +128,9 @@ function RegisterForm(props) {
                 <Message.Header>Upsss...</Message.Header>
                 <p>Tidak bisa melakukan registrasi. Cek kembali isian Anda.</p>
               </Message>
-            ) : (
-              <Success />
-            )}
+            ) : null}
+
+            {isSuccess && <SuccessForm />}
           </Grid.Column>
         </Grid.Row>
       </Grid>
