@@ -24,9 +24,9 @@ function RegisterForm(props) {
 
   const onRegister = () => {
     if (
-      email === "" &&
-      password === "" &&
-      validationpassword === "" &&
+      email === "" ||
+      password === "" ||
+      validationpassword === "" ||
       registerAs === ""
     ) {
       setIsError(true);
@@ -95,7 +95,7 @@ function RegisterForm(props) {
                   <Select
                     placeholder="Register Sebagai"
                     options={registerOptions}
-                    onChange={(_, { value }) => setRegisterAs(value)}
+                    onChange={(_, data) => setRegisterAs(data.value)}
                   />
                 </Form.Field>
 

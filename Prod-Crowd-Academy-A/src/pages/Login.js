@@ -34,7 +34,7 @@ function Login(props) {
   const [loginAs, setLoginAs] = useState("");
 
   const onLogin = () => {
-    if (email === "" && password === "" && loginAs === "") {
+    if (email === "" || password === "" || loginAs === "") {
       setError(true);
     } else {
       props.onLogin();
@@ -88,7 +88,7 @@ function Login(props) {
                     fluid
                     selection
                     options={friendOptions}
-                    onChange={(_, { value }) => setLoginAs(value)}
+                    onChange={(_, data) => setLoginAs(data.value)}
                   />
                 </Form.Field>
                 <div style={{ cursor: "pointer" }}>
