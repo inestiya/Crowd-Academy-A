@@ -17,20 +17,21 @@ import LoginFormLogo from "../assets/logo-CA-background2.png";
 function Login(props) {
   const friendOptions = [
     {
-      key: "Tutor",
-      text: "Tutor",
-      value: "Tutor",
+      key: "Learner",
+      text: "Leaner",
+      value: "1",
     },
     {
-      key: "Leaner",
-      text: "Leaner",
-      value: "Leaner",
+      key: "Tutor",
+      text: "Tutor",
+      value: "2",
     },
   ];
 
   const [isError, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loginAs, setLoginAs] = useState("");
 
   const onLogin = () => {
     if (email === "timA@mail.com" && password === "password") {
@@ -87,7 +88,7 @@ function Login(props) {
                     fluid
                     selection
                     options={friendOptions}
-                    onChange={(_, data) => console.log(data)}
+                    onChange={(_, { value }) => setLoginAs(value)}
                   />
                 </Form.Field>
                 <div style={{ cursor: "pointer" }}>

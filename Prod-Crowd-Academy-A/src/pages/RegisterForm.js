@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import {
   Button,
   Divider,
@@ -15,9 +17,13 @@ import RegisterFormLogo from "../assets/logo-CA-background2.png";
 
 function RegisterForm(props) {
   const registerOptions = [
-    { key: "tutor", value: "tutor", text: "Tutor" },
-    { key: "learner", value: "learner", text: "Learner" },
+    { key: "learner", value: "1", text: "Learner" },
+    { key: "tutor", value: "2", text: "Tutor" },
   ];
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [validationpassword, setValidationPassword] = useState("");
 
   return (
     <div
@@ -45,21 +51,36 @@ function RegisterForm(props) {
               <Form>
                 <Form.Field>
                   <label>Username (Email)</label>
-                  <input placeholder="Isi username atau email" type="email" />
+                  <input
+                    placeholder="Isi username atau email"
+                    type="email"
+                    onChange={(event) => setEmail(event.target.value)}
+                  />
                 </Form.Field>
                 <Form.Field>
                   <label>Password</label>
-                  <input placeholder="Password" type="Password" />
+                  <input
+                    placeholder="Password"
+                    type="Password"
+                    onChange={(event) => setPassword(event.target.value)}
+                  />
                 </Form.Field>
                 <Form.Field>
                   <label>Konfirmasi Password</label>
-                  <input placeholder="Isi Ulang Password" type="Password" />
+                  <input
+                    placeholder="Isi Ulang Password"
+                    type="Password"
+                    onChange={(event) =>
+                      setValidationPassword(event.target.value)
+                    }
+                  />
                 </Form.Field>
                 <Form.Field>
                   <label>Register Sebagai</label>
                   <Select
                     placeholder="Register Sebagai"
                     options={registerOptions}
+                    onChange={(_, { value }) => value}
                   />
                 </Form.Field>
 
