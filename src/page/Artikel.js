@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from "react";
-import { Container, Grid, Message } from "semantic-ui-react";
+import { Container, Grid, Message, Loader, Dimmer } from "semantic-ui-react";
 import styled from "styled-components";
 import { instance } from "../api/instance";
 
@@ -7,13 +7,17 @@ import { instance } from "../api/instance";
 
 function Artikel() {
 const [response, setResponse] = useState([]);
+const [isLoading, setLoading] = useState(false);
 useEffect(() => {
+  setLoading(true);
   instance
     .get("/list_artikel?id_tutor=1")
     .then((response) => {
-        setResponse(response.data.data)
+      setLoading(false);
+      setResponse(response.data.data)
     })
     .catch(() => {
+      setLoading(false);
       <Message negative>Failed to fetch from server!</Message>
     });
 }, []);
@@ -43,7 +47,10 @@ useEffect(() => {
   /*combine UI Framework with styled components*/
   return (
     <div>
-    {response.map((artikel) => (
+    {isLoading ?   <Dimmer active><Loader content='Loading' /></Dimmer>  : null}
+    {response && response.map((artikel) => {
+      return (
+        <div>
    <Container>
       <StyledGrid>
         <StyledGridRow>
@@ -116,7 +123,8 @@ useEffect(() => {
         </StyledGridRow>
       </StyledGrid>
     </Container>
-    ))}
+    </div>)}
+    )}
     </div>
   );
 };
