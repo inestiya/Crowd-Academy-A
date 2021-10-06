@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route,Redirect } from "react-router-dom"
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom"
 import "semantic-ui-css/semantic.min.css";
 import HomePage from "./pages/HomePage";
-// import PrivateRoute from "./component/PrivateRoute";
+import PrivateRoute from "./component/PrivateRoute";
 import Auth from "./Auth";
 import "./App.css";
 import Artikel from "./page/Artikel";
@@ -17,9 +17,9 @@ const [isLogin,onLogin] = useState(false);
           <Auth />
         </Route>
         {/* <PageLayout> */}
-        <Route path="/homepage" isLogin={isLogin}>
+        <PrivateRoute path="/homepage" isLogin={isLogin}>
           <HomePage />
-        </Route>
+        </PrivateRoute>
         <Route path="/artikel">
             <Artikel />
           </Route>
