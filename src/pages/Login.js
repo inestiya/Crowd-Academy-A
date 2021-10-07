@@ -13,6 +13,7 @@ import {
 import { useState } from "react";
 import "../App.js";
 import LoginFormLogo from "../assets/logo-CA-background2.png";
+import { Link } from "react-router-dom";
 
 function Login(props) {
   const friendOptions = [
@@ -34,7 +35,7 @@ function Login(props) {
 
   const onLogin = () => {
     if (email === "timA@mail.com" && password === "password") {
-      props.onLogin();
+      props.setLogin();
     } else {
       setError(true);
     }
@@ -90,14 +91,20 @@ function Login(props) {
                     onChange={(_, data) => console.log(data)}
                   />
                 </Form.Field>
+              
                 <div style={{ cursor: "pointer" }}>
                   Belum punya akun?{" "}
-                  <a onClick={() => props.onRegisterFormClick()}> Register </a>
+                  <Link to="/register">
+                  <a onClick> Register </a>
+                  </Link>
                 </div>
+               
                 <br></br>
+                <Link to="/homepage">
                 <Button fluid primary onClick={onLogin}>
                   Login
                 </Button>
+                </Link>
               </Form>
 
               <Divider horizontal>ATAU</Divider>

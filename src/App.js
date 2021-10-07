@@ -3,18 +3,22 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom"
 import "semantic-ui-css/semantic.min.css";
 import HomePage from "./pages/HomePage";
 import PrivateRoute from "./component/PrivateRoute";
-import Auth from "./Auth";
 import "./App.css";
 import Artikel from "./page/Artikel";
 import Kelas from "./page/Kelas";
+import RegisterForm from "./pages/RegisterForm";
+import Login from "./pages/Login";
 
 function App() {
-const [isLogin,onLogin] = useState(false);
+const [isLogin,setLogin] = useState(false);
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/auth">
-          <Auth />
+      <Route path="/login">
+          <Login setLogin={() => setLogin(true)} />
+        </Route>
+        <Route path="/register">
+          <RegisterForm />
         </Route>
         {/* <PageLayout> */}
         <PrivateRoute path="/homepage" isLogin={isLogin}>
@@ -28,7 +32,7 @@ const [isLogin,onLogin] = useState(false);
           </Route>
           {/* </PageLayout> */}
           <Route path="/">
-          <Redirect to="/auth" />
+          <Redirect to="/login" />
         </Route>
         {/* <Route path="/profile">
           <Profile />

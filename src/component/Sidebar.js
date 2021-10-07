@@ -4,6 +4,7 @@ import "../pages/HomePage";
 import { Image, Icon } from "semantic-ui-react";
 
 import CALogo from "../assets/logo-CA-background.png";
+import { Link } from "react-router-dom";
 const Sidebar = ({ activeSidebar }) => {
   return (
     <div>
@@ -15,13 +16,13 @@ const Sidebar = ({ activeSidebar }) => {
         </div>
         <div className="nav">
           {/* Menu sidebar bisa disesuaikan sesuai tugas individunya */}
-          <a href="/homepage"><Icon name='home' />Beranda</a>
-          <a href="/my-profile"><Icon name='user' />Profil Saya</a>
-          <a href="/addnewclass"><Icon name='calendar alternate outline' />Buat Kelas Baru</a>
-          <a href="/my-class"><Icon name='laptop' />Kelas Ajar Saya</a>
-          <a href="/upload"><Icon name='list' />Post Artikel</a>
-          <a href="/my-articles"><Icon name='pen square' />Artikel Saya</a>
-          <a href="/login"><Icon name='log out' />Sign Out</a>
+          <Link to="/homepage"><Icon name='home' />Beranda</Link>
+          <Link to="/my-profile"><Icon name='user' />Profil Saya</Link>
+          <Link to="/addnewclass"><Icon name='calendar alternate outline' />Buat Kelas Baru</Link>
+          <Link to="/my-class"><Icon name='laptop' />Kelas Ajar Saya</Link>
+          <Link to="/upload"><Icon name='list' />Post Artikel</Link>
+          <Link to="/my-articles"><Icon name='pen square' />Artikel Saya</Link>
+          <Link to="/login"><Icon name='log out' />Sign Out</Link>
         </div>
       </div>
     </div>

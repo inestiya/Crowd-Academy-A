@@ -3,8 +3,6 @@ import { Container, Grid, Message, Loader, Dimmer } from "semantic-ui-react";
 import styled from "styled-components";
 import { instance } from "../api/instance";
 
-/* Function with hook*/
-
 function Artikel() {
 const [response, setResponse] = useState([]);
 const [isLoading, setLoading] = useState(false);
@@ -21,9 +19,6 @@ useEffect(() => {
       <Message negative>Failed to fetch from server!</Message>
     });
 }, []);
-
-  
-    // const currentTransaction = transaction?.data[0];
 
   const StyledGrid = styled(Grid)`
     border: 1px solid lightgray;

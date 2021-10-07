@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   Button,
   Divider,
@@ -75,7 +76,9 @@ function RegisterForm(props) {
               <br></br>
               <div style={{ cursor: "pointer" }}>
                 Sudah punya akun?{" "}
-                <a onClick={() => props.onLoginClick()}> Login </a>
+                <Link to="/login">
+                <a onClick> Login </a>
+                </Link>
               </div>
             </Segment>
           </Grid.Column>
