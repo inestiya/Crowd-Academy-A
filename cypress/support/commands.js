@@ -9,8 +9,20 @@
 // ***********************************************
 //
 //
+
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add('login', () => { 
+    cy.visit('http://localhost:3000/login');
+    cy.get("input[id='email']").type('timA@mail.com');
+    cy.wait(1000);
+    cy.get("input[id='password']").type('password');
+    cy.wait(1000);
+    cy.get('.action-select').should('have.value', '-Register sebagai-')
+    cy.get('.action-select').select('Tutor')
+    cy.get('.action-select').should('have.value', 'fr-Learner')
+    cy.get('form').submit();
+    cy.contains('Beranda');
+})
 //
 //
 // -- This is a child command --
