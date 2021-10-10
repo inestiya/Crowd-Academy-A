@@ -64,7 +64,7 @@ function Login(props) {
                 LOGIN
               </Header>
 
-              <Form>
+              <Form id="query-form">
                 <Form.Field>
                   <label>Email</label>
                   <input
@@ -83,9 +83,10 @@ function Login(props) {
                     onChange={(event) => setPassword(event.target.value)}
                   />
                 </Form.Field>
-                <Form.Field>
+                <Form.Field id="action-select">
                   <label>Login sebagai</label>
                   <Dropdown
+                    id="action-select"
                     placeholder="-Login sebagai-"
                     fluid
                     selection

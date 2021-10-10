@@ -22,7 +22,7 @@ Cypress.Commands.add('login', () => {
     cy.get('.action-select').should('have.value', 'fr-Learner')
     cy.get('form').submit();
     cy.contains('Beranda');
-})
+});
 //
 //
 // -- This is a child command --

@@ -43,7 +43,7 @@ function RegisterForm(props) {
               <Header style={{ display: "flex", justifyContent: "center" }}>
                 Register
               </Header>
-              <Form>
+              <Form id="query-form">
                 <Form.Field>
                   <label>Username (Email)</label>
                   <input placeholder="Isi username atau email" type="email" />
@@ -56,9 +56,9 @@ function RegisterForm(props) {
                   <label>Konfirmasi Password</label>
                   <input placeholder="Isi Ulang Password" type="Password" id="re-password" />
                 </Form.Field>
-                <Form.Field>
+                <Form.Field id="action-select">
                   <label>Register Sebagai</label>
-                  <Select
+                  <Select id="action-select"
                     placeholder="Register Sebagai"
                     options={registerOptions}
                   />
