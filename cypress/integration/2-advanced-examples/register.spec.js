@@ -12,7 +12,7 @@ describe ('Register page auth app', ()=> {
     cy.wait(1000);
     cy.get("input[id='password']").type('password');
     cy.wait(1000);
-    cy.get("input[id='password']").type('password');
+    cy.get("input[id='re-password']").type('password');
     cy.wait(1000);
     cy.get('.action-select').should('have.value', '-Register sebagai-')
     cy.get('.action-select').select('Tutor')

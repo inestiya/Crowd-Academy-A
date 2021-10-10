@@ -4,7 +4,7 @@ import "semantic-ui-css/semantic.min.css";
 import HomePage from "./pages/HomePage";
 import PrivateRoute from "./component/PrivateRoute";
 import "./App.css";
-import Artikel from "./page/Artikel";
+import MenuArtikel from "./pages/MenuArtikel";
 import Kelas from "./page/Kelas";
 import RegisterForm from "./pages/RegisterForm";
 import Login from "./pages/Login";
@@ -25,7 +25,7 @@ const [isLogin,setLogin] = useState(false);
           <HomePage />
         </PrivateRoute>
         <Route path="/artikel">
-            <Artikel />
+            <MenuArtikel />
           </Route>
           <Route path="/kelas">
             <Kelas />

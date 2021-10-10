@@ -4,15 +4,15 @@ import styled from "styled-components";
 import { instance } from "../api/instance";
 
 function Artikel() {
-const [response, setResponse] = useState([]);
+const [listArtikel, setlistArtikel] = useState([]);
 const [isLoading, setLoading] = useState(false);
 useEffect(() => {
   setLoading(true);
   instance
     .get("/list_artikel?id_tutor=1")
-    .then((response) => {
+    .then((listArtikel) => {
       setLoading(false);
-      setResponse(response.data.data)
+      setlistArtikel(listArtikel.data.data)
     })
     .catch(() => {
       setLoading(false);
@@ -43,7 +43,7 @@ useEffect(() => {
   return (
     <div>
     {isLoading ?   <Dimmer active><Loader content='Loading' /></Dimmer>  : null}
-    {response && response.map((artikel) => {
+    {listArtikel && listArtikel.map((artikel) => {
       return (
         <div>
    <Container>
@@ -110,13 +110,6 @@ useEffect(() => {
         </StyledGridRow>
       </StyledGrid>
 
-      <StyledGrid>
-        <StyledGridRow>
-          <Grid.Column>
-            <span>Isi Artikel 2 dan Seterusnya</span>
-          </Grid.Column>
-        </StyledGridRow>
-      </StyledGrid>
     </Container>
     </div>)}
     )}

@@ -50,11 +50,11 @@ function RegisterForm(props) {
                 </Form.Field>
                 <Form.Field>
                   <label>Password</label>
-                  <input placeholder="Password" type="Password" />
+                  <input placeholder="Password" type="Password" id="password"/>
                 </Form.Field>
                 <Form.Field>
                   <label>Konfirmasi Password</label>
-                  <input placeholder="Isi Ulang Password" type="Password" />
+                  <input placeholder="Isi Ulang Password" type="Password" id="re-password" />
                 </Form.Field>
                 <Form.Field>
                   <label>Register Sebagai</label>

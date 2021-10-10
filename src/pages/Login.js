@@ -70,6 +70,7 @@ function Login(props) {
                   <input
                     placeholder="Email address"
                     type="email"
+                    id="email"
                     onChange={(event) => setEmail(event.target.value)}
                   />
                 </Form.Field>
@@ -78,6 +79,7 @@ function Login(props) {
                   <input
                     placeholder="Password"
                     type="password"
+                    id="password"
                     onChange={(event) => setPassword(event.target.value)}
                   />
                 </Form.Field>
