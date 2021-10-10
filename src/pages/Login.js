@@ -9,6 +9,7 @@ import {
   Icon,
   Image,
   Grid,
+  Select,
 } from "semantic-ui-react";
 import { useState } from "react";
 import "../App.js";
@@ -83,9 +84,9 @@ function Login(props) {
                     onChange={(event) => setPassword(event.target.value)}
                   />
                 </Form.Field>
-                <Form.Field id="action-select">
+                <Form.Field>
                   <label>Login sebagai</label>
-                  <Dropdown
+                  <Select
                     id="action-select"
                     placeholder="-Login sebagai-"
                     fluid

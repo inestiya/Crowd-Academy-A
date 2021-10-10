@@ -46,7 +46,7 @@ function RegisterForm(props) {
               <Form id="query-form">
                 <Form.Field>
                   <label>Username (Email)</label>
-                  <input placeholder="Isi username atau email" type="email" />
+                  <input placeholder="Isi username atau email" type="email" id="email"/>
                 </Form.Field>
                 <Form.Field>
                   <label>Password</label>
@@ -56,7 +56,7 @@ function RegisterForm(props) {
                   <label>Konfirmasi Password</label>
                   <input placeholder="Isi Ulang Password" type="Password" id="re-password" />
                 </Form.Field>
-                <Form.Field id="action-select">
+                <Form.Field>
                   <label>Register Sebagai</label>
                   <Select id="action-select"
                     placeholder="Register Sebagai"

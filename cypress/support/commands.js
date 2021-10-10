@@ -17,10 +17,10 @@ Cypress.Commands.add('login', () => {
     cy.wait(1000);
     cy.get("input[id='password']").type('password');
     cy.wait(1000);
-    cy.get('.action-select').should('have.value', '-Login sebagai-')
-    cy.get('.action-select').select('Tutor')
-    cy.get('.action-select').should('have.value', 'fr-Learner')
-    cy.get('form').submit();
+    cy.get('#action-select').contains('-Login sebagai-');
+    cy.get('#action-select').click();
+    cy.get('div[role="option"]:contains("Tutor")').click();
+    cy.get('button:contains("Login")').first().click();
     cy.contains('Beranda');
 });
 //
